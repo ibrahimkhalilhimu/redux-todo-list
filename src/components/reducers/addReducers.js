@@ -5,16 +5,19 @@ const addReducres =(state=initialState,action)=>{
     switch(action.type){
         case "ADD":
             const {id,data} = action.payload;
-            return {
-                ...state,
-                list:[
-                    ...state.list,
-                    {
-                        id: id,
-                        data: data
-                    }
-                ]
+            if(data.length > 2){
+                return {
+                    ...state,
+                    list:[
+                        ...state.list,
+                        {
+                            id: id,
+                            data: data
+                        }
+                    ]
+                }
             }
+         
 
             case "DELETE":
                 
